@@ -31,6 +31,14 @@ export class Chart extends React.Component {
       labelClass: 'readings',
     },
     {
+      name: 'sensor-data_second',
+      type: 'LINE',
+      stroke: 'black',
+      strokeWidth: 5,
+      label: 'Readings_second',
+      labelClass: 'readings_second',
+    },
+    {
       name: 'z-score',
       type: 'AREA',
       fill: 'rgba(216, 13, 49, 0.2)',
@@ -64,6 +72,7 @@ export class Chart extends React.Component {
 
     this.tsChart.addSeries(this.seriesList[0]); // readings
     this.tsChart.addSeries(this.seriesList[1]); //z-score
+    this.tsChart.addSeries(this.seriesList[2]); //z-score
 
     this.connect();
 
@@ -134,6 +143,7 @@ export class Chart extends React.Component {
 
     this.tsChart.adjustAxes(data);
     this.tsChart.setSeriesData('sensor-data', data, false);
+    this.tsChart.setSeriesData('sensor-data_second', data, false);
     this.tsChart.setSeriesData('z-score', zLine, false);
   }
 

@@ -56,6 +56,7 @@ const getNextReading = (data, index) => {
   response = {
     timestamp: Date.now(),
     value: data.readings[index],
+    value_second: data.readings_second[index],
     zscore: data.zScores[index]
   };
 

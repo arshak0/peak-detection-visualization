@@ -125,7 +125,7 @@ export default class D3TsChart {
       .transition().duration(TRANSITION_DURATION).ease(d3.easeQuadIn)
       .attr('d', d3.line()
         .x((d) => { return this.xScale(d.timestamp); })
-        .y((d) => { return this.yScale(d.value); })
+        .y((d) => { return this.yScale(d.value_second); })
       );
   }
 
